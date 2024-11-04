@@ -6,10 +6,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "products", schema = "public", catalog = "shop")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@Data
 @Builder
 public class Products {
 

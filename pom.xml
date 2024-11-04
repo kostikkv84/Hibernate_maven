@@ -11,8 +11,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <rest-assured.version>5.3.0</rest-assured.version>
-        <allure.rest-assured.version>2.20.1</allure.rest-assured.version>
-        <jackson.version>2.12.3</jackson.version>
+        <allure.rest-assured.version>2.27.0</allure.rest-assured.version>
+        <jackson.version>2.17.1</jackson.version>
         <json.version>20220924</json.version>
         <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
         <maven.compiler.source>22</maven.compiler.source>
@@ -36,8 +36,9 @@
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>2.20.1</version>
+            <artifactId>allure-junit5</artifactId>
+            <version>2.25.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Rest Assured Dependency -->
@@ -62,6 +63,7 @@
             <scope>test</scope>
         </dependency>
 
+
         <!-- hibernate -->
         <dependency>
             <groupId>org.hibernate.orm</groupId>
@@ -72,6 +74,17 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.7.3</version>
+        </dependency>
+        <!-- Spring dependency -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>3.3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>3.3.4</version>
         </dependency>
         <!-- JSON Dependency -->
         <dependency>
@@ -134,10 +147,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin-version}</version>
                 <configuration>
-                    <testFailureIgnore>false</testFailureIgnore>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                <!--    <testFailureIgnore>false</testFailureIgnore> -->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>

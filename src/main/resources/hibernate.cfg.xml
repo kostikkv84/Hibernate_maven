@@ -23,7 +23,7 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Указываем Entity классы -->
-        <mapping class="entity.Products"/>
+        <mapping class="Entity.Products"/>
 
     </session-factory>
 </hibernate-configuration>
